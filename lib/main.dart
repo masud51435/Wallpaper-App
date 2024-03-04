@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:wallpaper/homepage.dart';
 
 void main() {
-  //timeDilation = 3.0;
   runApp(const MyApp());
 }
 
