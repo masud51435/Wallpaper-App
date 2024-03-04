@@ -21,7 +21,8 @@ class _ShowImageState extends State<ShowImage> {
     (bool,) result = (
       await AsyncWallpaper.setWallpaperFromFile(
         filePath: file.path,
-        goToHome: true,
+        goToHome: false,
+        toastDetails: ToastDetails(message: 'WallPaper Added'),
         wallpaperLocation: AsyncWallpaper.BOTH_SCREENS,
       ),
     );
@@ -56,14 +57,14 @@ class _ShowImageState extends State<ShowImage> {
               height: 70,
               width: MediaQuery.of(context).size.width,
               child: OutlinedButton(
+                onPressed: () {
+                  setWallpaper();
+                },
                 style: OutlinedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(40),
                   ),
                 ),
-                onPressed: () {
-                  setWallpaper();
-                },
                 child: const Text(
                   'Set WallPaper',
                   style: TextStyle(
